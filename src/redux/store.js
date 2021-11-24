@@ -5,14 +5,14 @@ import contactsReduser from "./reducer";
 //const initialState = {
 //  value: 21,
 //};
-const initialState = {
-  contacts: {
-    items: [],
-    filter: "",
-  },
-  //name: "",
-  //number: "",
-};
+//const initialState = {
+//contacts: {
+//items: [],
+// filter: "",
+//},
+//name: "",
+//number: "",
+//};
 
 const rootReducer = combineReducers({
   contacts: contactsReduser,

@@ -1,4 +1,4 @@
-const ADD_CONTACT = "contacts/addContacts";
-const DELETE_CONTACT = "contacts/delContacts";
+const ADD_CONTACT = "contacts/addContact";
+const DELETE_CONTACT = "contacts/deleteContact";
 
 export default { ADD_CONTACT, DELETE_CONTACT };
