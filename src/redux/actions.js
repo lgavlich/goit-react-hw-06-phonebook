@@ -14,3 +14,5 @@ export const deleteContact = (listId) => ({
   type: types.DELETE_CONTACT,
   payload: listId,
 });
+
+
