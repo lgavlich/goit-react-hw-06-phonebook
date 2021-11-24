@@ -6,7 +6,7 @@ import Filter from "./components/Filter/Filter";
 import PhonebookList from "./components/PhonebookList/PhonebookList";
 import useLocalStorage from "./hooks/localStorage";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import store from "./redux/store";
 
 export default function App() {
   const [contacts, setContacts] = useLocalStorage("contacts", []);
@@ -30,9 +30,9 @@ export default function App() {
     setContacts((prevState) => [...prevState, contactData]);
   };
 
-  const deleteList = (listId) => {
-    setContacts((state) => state.filter((contact) => contact.id !== listId));
-  };
+  //const deleteList = (listId) => {
+  //setContacts((state) => state.filter((contact) => contact.id !== listId));
+  //};
 
   const changeFilter = (event) => {
     setFilter(event.currentTarget.value);
@@ -55,7 +55,7 @@ export default function App() {
         <PhonebookList
           contacts={getVisibleContacts()}
           title="Contacts"
-          onDeleteList={deleteList}
+          //onDeleteList={deleteList}
         />
       </Container>
     </Provider>
