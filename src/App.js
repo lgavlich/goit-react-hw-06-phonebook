@@ -5,8 +5,6 @@ import Input from "./components/ContactList/ContactList";
 import Filter from "./components/Filter/Filter";
 import PhonebookList from "./components/PhonebookList/PhonebookList";
 import useLocalStorage from "./hooks/localStorage";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 
 export default function App() {
   const [contacts, setContacts] = useLocalStorage("contacts", []);
@@ -47,7 +45,7 @@ export default function App() {
   };
 
   return (
-    <Provider store={store}>
+    
       <Container>
         <h1>Phonebook</h1>
         <Input onFormSubmit={formSubmit} />
@@ -58,6 +56,6 @@ export default function App() {
           //onDeleteList={deleteList}
         />
       </Container>
-    </Provider>
+  
   );
 }
