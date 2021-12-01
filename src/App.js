@@ -28,9 +28,9 @@ export default function App() {
     setContacts((prevState) => [...prevState, contactData]);
   };
 
-  //const deleteList = (listId) => {
-  //setContacts((state) => state.filter((contact) => contact.id !== listId));
-  //};
+  const deleteList = (listId) => {
+    setContacts((state) => state.filter((contact) => contact.id !== listId));
+  };
 
   const changeFilter = (event) => {
     setFilter(event.currentTarget.value);
@@ -45,17 +45,15 @@ export default function App() {
   };
 
   return (
-    
-      <Container>
-        <h1>Phonebook</h1>
-        <Input onFormSubmit={formSubmit} />
-        <Filter value={filter} onChangeFilter={changeFilter} />
-        <PhonebookList
-          contacts={getVisibleContacts()}
-          title="Contacts"
-          //onDeleteList={deleteList}
-        />
-      </Container>
-  
+    <Container>
+      <h1>Phonebook</h1>
+      <Input onFormSubmit={formSubmit} />
+      <Filter value={filter} onChangeFilter={changeFilter} />
+      <PhonebookList
+        contacts={getVisibleContacts()}
+        title="Contacts"
+        onDeleteList={deleteList}
+      />
+    </Container>
   );
 }

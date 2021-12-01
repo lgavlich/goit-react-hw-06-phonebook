@@ -1,8 +1,14 @@
 import React from "react";
 import PhonebookItem from "../PhonebookItem/PhonebookItem";
 import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import actions from "../../redux/contacts-actions";
+import { getVisibleContacts } from "../../redux/contacts-selector";
 
-const PhonebookList = ({ contacts, title, onDeleteList }) => {
+const PhonebookList = ({ title }) => {
+  const contacts = useSelector(getVisibleContacts);
+  const dispatch = useDispatch();
+  const onDeleteList = (id) => dispatch(actions.DelContact(id));
   return (
     <div>
       <h2>{title}</h2>
@@ -27,3 +33,31 @@ PhonebookList.propTypes = {
 };
 
 export default PhonebookList;
+
+//const getVisibleContacts = (allContacts, filter) => {
+//  const normalizedFilter = filter.toLowerCase();
+
+//  return allContacts.filter(({ contact }) =>
+//    contact.name.toLowerCase().includes(normalizedFilter)
+//  );
+//};
+
+
+//const mapStateToProps = (state) => {
+//  const { filter, items } = state.contacts;
+//  const visibleContacts = getVisibleContacts(items, filter);
+
+//  return {
+//    contacts: visibleContacts,
+//  };
+//};
+
+//const mapStateToProps = ({ contacts: { items, filter } }) => ({
+//  contacts: getVisibleContacts(items, filter),
+//});
+
+//const mapDispatchToProps = (dispatch) => ({
+//  onDeleteList: (id) => dispatch(actions.DelContact(id)),
+//});
+
+//export default connect(mapStateToProps, mapDispatchToProps)(PhonebookList);

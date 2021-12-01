@@ -2,8 +2,10 @@ import { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import s from "./ContactList.module.css";
+import { connect } from "react-redux";
+import actions from "../../redux/contacts-actions";
 
-export default function Input({ onFormSubmit }) {
+function Input({ onFormSubmit }) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const contactID = useRef(uuidv4());
@@ -26,6 +28,7 @@ export default function Input({ onFormSubmit }) {
 
   const addContact = (event) => {
     event.preventDefault();
+
     onFormSubmit({ name: name, number: number, contactID: contactID });
     formReset();
   };
@@ -73,3 +76,11 @@ export default function Input({ onFormSubmit }) {
 Input.propTypes = {
   onFormSubmit: PropTypes.func.isRequired,
 };
+const mapStateToProps = (state) => ({
+  contacts: state.contacts.items,
+});
+const mapDispatchToProps = (dispatch) => ({
+  onFormSubmit: (data) => dispatch(actions.addContact(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Input);
