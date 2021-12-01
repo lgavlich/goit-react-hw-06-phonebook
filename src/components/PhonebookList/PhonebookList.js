@@ -8,7 +8,7 @@ import { getVisibleContacts } from "../../redux/contacts-selector";
 const PhonebookList = ({ title }) => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
-  const onDeleteList = (id) => dispatch(actions.DelContact(id));
+  const onDeleteList = (id) => dispatch(actions.deleteContact(id));
   return (
     <div>
       <h2>{title}</h2>
@@ -41,7 +41,6 @@ export default PhonebookList;
 //    contact.name.toLowerCase().includes(normalizedFilter)
 //  );
 //};
-
 
 //const mapStateToProps = (state) => {
 //  const { filter, items } = state.contacts;
