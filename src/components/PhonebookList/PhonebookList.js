@@ -2,13 +2,13 @@ import React from "react";
 import PhonebookItem from "../PhonebookItem/PhonebookItem";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
-import actions from "../../redux/contacts-actions";
+import deleteContact from "../../redux/contacts-actions";
 import { getVisibleContacts } from "../../redux/contacts-selector";
 
 const PhonebookList = ({ title }) => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
-  const onDeleteList = (id) => dispatch(actions.deleteContact(id));
+  const onDeleteList = (id) => dispatch(deleteContact.deleteContact(id));
   return (
     <div>
       <h2>{title}</h2>

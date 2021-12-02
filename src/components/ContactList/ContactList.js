@@ -29,7 +29,7 @@ function Input({ onFormSubmit }) {
   const addContact = (event) => {
     event.preventDefault();
 
-    onFormSubmit({ name: name, number: number, contactID: contactID });
+    onFormSubmit({ name: name, number: number, contactId: contactID });
     formReset();
   };
 
@@ -37,7 +37,6 @@ function Input({ onFormSubmit }) {
     setName("");
     setNumber("");
   };
-
   return (
     <div className={s.Container}>
       <form className={s.form} onSubmit={addContact}>
