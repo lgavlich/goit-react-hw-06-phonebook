@@ -13,8 +13,9 @@ const Filter = ({ value, onChangeFilter }) => {
         className={s.inputFilter}
         type="text"
         value={value}
+        name="filter"
         onChange={onChangeFilter}
-      />
+      ></input>
     </label>
   );
 };
@@ -24,11 +25,10 @@ Filter.propTypes = {
   onChangeFilter: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
-  value: state.contacts.filter,
+  value: state.filter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onChangeFilter: (e) =>
-    dispatch(filterActions.changeFilter(e.target.value)),
+  onChangeFilter: (e) => dispatch(filterActions.changeFilter(e.target.value)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

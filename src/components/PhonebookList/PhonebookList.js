@@ -1,6 +1,6 @@
 import React from "react";
 import PhonebookItem from "../PhonebookItem/PhonebookItem";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import deleteContact from "../../redux/contacts-actions";
 import { getVisibleContacts } from "../../redux/contacts-selector";
@@ -26,11 +26,11 @@ const PhonebookList = ({ title }) => {
   );
 };
 
-PhonebookList.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  title: PropTypes.string.isRequired,
-  onDeleteList: PropTypes.func.isRequired,
-};
+//PhonebookList.propTypes = {
+//  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+//  title: PropTypes.string.isRequired,
+//  onDeleteList: PropTypes.func.isRequired,
+//};
 
 export default PhonebookList;
 

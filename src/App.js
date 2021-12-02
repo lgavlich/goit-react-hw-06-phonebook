@@ -1,6 +1,7 @@
 import Container from "./components/Container/Container";
 import Input from "./components/ContactList/ContactList";
 import PhonebookList from "./components/PhonebookList/PhonebookList";
+import Filter from "./components/Filter/Filter";
 //import useLocalStorage from "./hooks/localStorage";
 //import { useState } from "react";
 //import Filter from "./components/Filter/Filter";
@@ -11,6 +12,7 @@ export default function App() {
     <Container>
       <h1>Phonebook</h1>
       <Input />
+      <Filter />
       <PhonebookList title="Contacts" />
     </Container>
   );
