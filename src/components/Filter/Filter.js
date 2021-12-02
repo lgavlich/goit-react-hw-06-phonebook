@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import s from "./Filter.module.css";
 import filterActions from "../../redux/contacts-actions";
 
-const Filter = ({ value, onChangeFilter }) => {
+const Filter = ({ onChangeFilter }) => {
   return (
     <label className={s.filter}>
       <p className={s.title}>Find contacts by name </p>
@@ -12,7 +12,7 @@ const Filter = ({ value, onChangeFilter }) => {
       <input
         className={s.inputFilter}
         type="text"
-        value={value}
+        //value={value}
         name="filter"
         onChange={onChangeFilter}
       ></input>
@@ -21,7 +21,7 @@ const Filter = ({ value, onChangeFilter }) => {
 };
 
 Filter.propTypes = {
-  value: PropTypes.string.isRequired,
+  //value: PropTypes.string.isRequired,
   onChangeFilter: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({

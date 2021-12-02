@@ -4,12 +4,12 @@ import actions from "./contacts-actions";
 
 const items = createReducer([], {
   [actions.addContact]: (state, { payload }) => [...state, payload],
-  [actions.DelContact]: (state, { payload }) =>
+  [actions.deleteContact]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
 });
 
 const filter = createReducer("", {
-  [actions.filter]: (_, { payload }) => payload,
+  [actions.changeFilter]: (_, { payload }) => payload,
 });
 
 //const items = (state = [], { type, payload }) => {
